@@ -14,7 +14,7 @@ import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 @Component /*/Marca la clase como un componente ´para ser escaneado como bean(instanciar clase) para suministrar
 en el contedor de Spring*/
 @Slf4j /*Ofrece una API generica para logeo para simplificar los ingresos por medio de lombok*/
-@RequiredArgsConstructor
+@RequiredArgsConstructor //Creaun constcutor con los atributos existentes
 public class WebSocketEventListener {
 
     //Metodo que soporta la conexión por protoclo STOMP
