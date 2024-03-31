@@ -17,7 +17,7 @@ public class WebSocketEventListener {
 
     private final SimpMessageSendingOperations messageTemplate;
 
-    @EventListener  //Metodo que permite saber si un usuario a dejado la sesión
+    @EventListener
     public void handleWebSocketDisconnectListener(
             SessionDisconnectEvent event
     ){
@@ -29,7 +29,6 @@ public class WebSocketEventListener {
                     .type(MessageType.LEAVE)
                     .sender(username)
                     .build();
-            //Informamos a todos los usuarios de la desconexión
             messageTemplate.convertAndSend("/topic/public",chatMessage);
         }
     }
