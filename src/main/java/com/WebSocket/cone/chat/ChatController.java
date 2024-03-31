@@ -19,12 +19,12 @@ public class ChatController {
     }
 
     //Metodo de agregar usuarios
-    @MessageMapping("/chat.addUser")
-    @SendTo("/topic/public")
+    @MessageMapping("/chat.addUser") //Establece conexión entre el usuario y el WebSocket
+    @SendTo("/topic/public")  //Que tema vamos a enviar en este caso a /topic
     public ChatMessage addUser(
             @Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor
     ){
-
+        //Agrega a usuario en una sesión del webSocket
         headerAccessor.getSessionAttributes().put("username",chatMessage.getSender());
         return  chatMessage;
     }
