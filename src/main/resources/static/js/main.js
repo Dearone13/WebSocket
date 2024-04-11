@@ -1,27 +1,36 @@
 'use strict';
 //Valores de los input de la pagina
 var usernamePage = document.querySelector('#username-page');
+//Guarda el valor de la etiqueta html con id #username-page
 var chatPage = document.querySelector('#chat-page');
+//Guarda el valor de la etiqueta html con id #chat-page
 var usernameForm = document.querySelector('#usernameForm');
+//Guarda el valor de la etiqueta html con id #usernameForm
 var messageForm = document.querySelector('#messageForm');
-var messageInput = document.querySelector('#message');
-var messageArea = document.querySelector('#messageArea');
+//Guarda el valor de la etiqueta html con id #messageForm
+var messageInput = document.querySelector('#messageForm');
+//Guarda el valor de la etiqueta html con id #messageForm
+var messageArea = document.querySelector('#messageForm');
+//Guarda el valor de la etiqueta html con id #messageForm
 var connectingElement = document.querySelector('.connecting');
+//Guarda el valor de la etiqueta html con class connecting
 
 var stompClient = null;
+//Crea variable que contendra las conexión WebSocket
 var username = null;
-//Colores definidos para los usuario
+//Variable que almacena la información con respecto a los usuarios.
 var colors = [
     '#2196F3', '#32c787', '#00BCD4', '#ff5652',
     '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
 ];
+//Colores definidos para los usuario definidos dentro un arreglo.
 
 function connect(event) {
 // Obtiene el nombre de usuario del elemento con el id 'name' del documento.
     username = document.querySelector('#name').value.trim();
   // Comprueba si se proporcionó un nombre de usuario válido.
     if(username) {
-     // Oculta la página de selección de nombre de usuario.
+     // Oculta la página de selección de nombre de usuario, cambia lo elementos de la clase.
         usernamePage.classList.add('hidden');
          // Muestra la página de chat.
         chatPage.classList.remove('hidden');
@@ -53,38 +62,43 @@ function onConnected() {
 
 
 function onError(error) {
+//Si cuenta un error la etiqueta html contendra el mensaje del error
     connectingElement.textContent = 'No se puedo conectar con el servidor del WebSocket. Por favor refresque y intente de nuevo!';
     connectingElement.style.color = 'red';
+    //Le da una propiedad de color rojo al texto
 }
 
-
+//Funcion encargada de enviar mensajes
 function sendMessage(event) {
+    //Traer el valor de la etiqueta sin espacios en blanco
     var messageContent = messageInput.value.trim();
     //El información del mensaje coincide con la infromación STOMP del usuario
     if(messageContent && stompClient) {
-    //Encapsula el mensaje en tipo Build
+    //Encapsula el mensaje en tipo Build en un objeto
         var chatMessage = {
             sender: username,
             content: messageInput.value,
             type: 'CHAT'
         };
+        //Encapsula el mensaje en formato JSON para ser enviado.
         stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+        //El input queda vacio
         messageInput.value = '';
     }
     event.preventDefault();
 }
 
-
+//Función que recibe mensajes que recibe el punto de conexión payload
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
-    //Obtener el cuerpo de mensaje de Payload
+    //Obtener el cuerpo de mensaje de Payload(punto de conexión)
 
     var messageElement = document.createElement('li');
     //Crear una etiqueta li.
-
+     //Verifica si el usuario esta unido al chat
     if(message.type === 'JOIN') {
         messageElement.classList.add('event-message');
-        //Agrega el elemento event-message
+        //Agrega el elemento event-message si un usuario de unio
         message.content = message.sender + ' se unio!';
         //El cotnenido del JSON ahora gestiona 'se unio'
     } else if (message.type === 'LEAVE') {
@@ -133,11 +147,16 @@ messageArea.scrollTop = messageArea.scrollHeight;
 
 
 function getAvatarColor(messageSender) {
+     //Cadena ordenada compacta
     var hash = 0;
+    //For hasta el usuario de mensaje de largo
     for (var i = 0; i < messageSender.length; i++) {
+        //trae la linea de cracteres char lo suma por la multiplicación de 31 * hash
         hash = 31 * hash + messageSender.charCodeAt(i);
     }
+    //Trae un index del modulo de has y el tamaño del arreglo de colores de forma absoluta
     var index = Math.abs(hash % colors.length);
+    //Trae el valor del arreglo.
     return colors[index];
 }
 

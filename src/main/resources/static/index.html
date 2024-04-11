@@ -1,53 +1,75 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><!--Inicializa el documento html-->
+<html> <!--Inicializa el documento html-->
 <head>
+    <!--Etiqueta metas que permite la visibilidad de flexibilidad de la pagina en varios equipos-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!--Asigna un titulo a la pagina-->
     <title>Spring Boot WebSocket Chat Application</title>
+    <!--Indexa la hoja de cascada al proyecto-->
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
+<!--Etiqueta de incurstación de codigo alternativo a nos Scprit-->
 <noscript>
     <h2>Lo siento! Tu navegador no soporta JavaScript</h2>
 </noscript>
-
+<!--Contenedor con id de identificación unica-->
 <div id="username-page">
+    <!--Contenedor con id de identificación unica-->
     <div class="username-page-container">
+        <!--Titulo-->
         <h1 class="title">Ingresa tu nombre para entrar al chat</h1>
+        <!--Etiqueta de formulario-->
         <form id="usernameForm" name="usernameForm">
+            <!--Contenedor con id de identificación unica-->
             <div class="form-group">
+                <!--Etiqueta de ingreso de datos de texto con atributos id y placeholde de texto predefinido-->
                 <input type="text" id="name" placeholder="Nombre de usuario" autocomplete="off" class="form-control" />
             </div>
+            <!--Contenedor con id de identificación unica-->
             <div class="form-group">
+                <!--Etiqueta  de boton-->
                 <button type="submit" class="accent username-submit">Empezar</button>
             </div>
         </form>
     </div>
 </div>
-
+<!--Contenedor con id de identificación unica-->
 <div id="chat-page" class="hidden">
+    <!--Contenedor con id de identificación unica-->
     <div class="chat-container">
+        <!--Contenedor con id de identificación unica-->
         <div class="chat-header">
+            <!--Etiqueta de titulo-->
             <h2>Spring WebSocket Chat Demo - Por Jose Picot & Carolina Segura</h2>
         </div>
+        <!--Contenedor con id de identificación unica el cual contiene texto-->
         <div class="connecting">
             Conectando...
         </div>
+        <!--Define etiqueta de lista-->
         <ul id="messageArea">
-
         </ul>
+        <!--Define etiqueta de formualrio-->
         <form id="messageForm" name="messageForm">
+            <!--Contenedor con id de identificación unica-->
             <div class="form-group">
+                <!--Contenedor con id de identificación unica-->
                 <div class="input-group clearfix">
+                    <!--Etieuta de ingreso de texto con un placeholder para texto predefinido-->
                     <input type="text" id="message" placeholder="Ingresa un mensaje..." autocomplete="off" class="form-control"/>
+                    <!--Etiqueta de boton-->
                     <button type="submit" class="primary">Enviar</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
+<!--Adiciona servicios de librerias javaScript por medio de etiqueta Scprit que érmite lenguaje JavaScript-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<!--Adiciona servicios de librerias javaScript-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<!--COnexión de html con la parte logica de javaScript-->
 <script src="/js/main.js"></script>
 </body>
 </html>

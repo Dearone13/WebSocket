@@ -1,287 +1,540 @@
 * {
+/*Establece modelo de caja persistente*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 html,body {
+/*Define altura*/
     height: 100%;
+    /**/
     overflow: hidden;
 }
 
 body {
+/*Cero margen*/
     margin: 0;
+    /*Cero espacio de caja*/
     padding: 0;
+    /*ancho de la letras*/
     font-weight: 400;
+    /*Fuente de letras*/
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*Tamaño de la letra*/
     font-size: 1rem;
+    /*Tamaño de las lineas de texto*/
     line-height: 1.58;
+    /*Color de texto*/
     color: #333;
+    /*Color de fondo*/
     background-color: #f4f4f4;
+    /*Altura ocupa la totalidad*/
     height: 100%;
 }
-
+/*Funciona despues de que se selecciona el contneido de la etiqueta*/
 .clearfix:after {
+/*Da caracteristica de bloque */
     display: block;
+    /*Pone en vacio el contenido*/
     content: "";
     clear: both;
+    /*Limpia el contneido */
 }
 
 .hidden {
+/*Oculta el contenido del selector*/
     display: none;
 }
 
 .form-control {
+/*Define ancho*/
     width: 100%;
+    /*Define minima altura*/
     min-height: 38px;
+    /*Define tamaño de la letra*/
     font-size: 15px;
+    /*Define colos, estilo y tamaño del borde*/
     border: 1px solid #c8c8c8;
 }
 
 .form-group {
+/*Pone margen  abajo del contenido de la caja*/
     margin-bottom: 15px;
 }
 
 input {
+/*Crea espacio dentro de la caja de 10px*/
     padding-left: 10px;
+    /*No tiene subrayado*/
     outline: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
+/*Le define a los titulo un margen de arriba de 20px*/
     margin-top: 20px;
+    /*Define un margen de abajo de 20px*/
     margin-bottom: 20px;
 }
 
 h1 {
+/*Define tamaño del titulo*/
     font-size: 1.7em;
 }
 
 a {
+/*Le define color a anchors*/
     color: #6db33f;
 }
 
 button {
+/*Le quita la propiedad de sombra */
     box-shadow: none;
+    /*Define tamaño, estilo y color al borde del boton*/
     border: 1px solid transparent;
+    /*Define tamaño al botn*/
     font-size: 14px;
+    /*Elimina el sobrencimado de linea del texto*/
     outline: none;
+    /*Define altura de liena de texto*/
     line-height: 100%;
+    /*Define estilo de los espacios entre textos*/
     white-space: nowrap;
+    /*Define posicionamiento vertical en el medio*/
     vertical-align: middle;
+    /*Define espaico dentro de la caja*/
     padding: 0.6rem 1rem;
+    /*Define radio o bordeado del borde*/
     border-radius: 2px;
+    /*Define un transicón progresiva de todas las caracteristicas presnetes*/
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+    /*Se pone el cursor cuanod seleccione*/
     min-height: 38px;
+    /*Define minima altura*/
 }
 
 button.default {
+/*Define color de fondo*/
     background-color: #e8e8e8;
+    /*Define color de texto*/
     color: #333;
+    /*Define sombra y ancho de la sombra*/
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
 button.primary {
+/*Define fondo*/
     background-color: #6db33f;
+    /*Define sombra de color y ancho de la sombra*/
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    /*Define color del texto*/
     color: #fff;
 }
 
 button.accent {
+/*Define fondo*/
     background-color: #6db33f;
+    /*Define sombra*/
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    /*Define color del texto*/
     color: #fff;
 }
 
 #username-page {
+/*Alineado de texto en el centro*/
     text-align: center;
 }
 
 .username-page-container {
+/*Define fondo*/
     background: #fff;
+    /*Define tamaño y color de sombra*/
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    /*Define bordeado del borde*/
     border-radius: 2px;
+    /*Define ancho de todo lo contenido de la caja*/
     width: 100%;
+    /*Define maximo de ancho*/
     max-width: 500px;
+    /*Aliena contenido en bloque*/
     display: inline-block;
+    /*Define margen encima de la caja*/
     margin-top: 42px;
+    /*Alienamiento vertical en medio*/
     vertical-align: middle;
+    /*posiconamiento del flujo normal es decir ubicacion original */
     position: relative;
+    /*define un espaciado de contenido de los cuatro*/
     padding: 35px 55px 35px;
+    /*Define minima altura*/
     min-height: 250px;
+    /*Define la posicion central absoluta del contenido*/
     position: absolute;
+    /*Define un pisicionamiento a la mitad del contenido con respecto encima*/
     top: 50%;
-    left: 0;
+    /*Posicnamiento de izquierda cero*/
+    /*Posicnamiento de derecha cero*/
     right: 0;
     margin: 0 auto;
+    /*margen en cero y adaptable*/
     margin-top: -160px;
+    /*margen de top de -160px*/
 }
 
 .username-page-container .username-submit {
+/*Margen encima del contenido*/
     margin-top: 10px;
 }
 
 
 #chat-page {
+/*Posicion relativa a la original de la pagina*/
     position: relative;
+    /*Altura del contenido*/
     height: 100%;
 }
 
 .chat-container {
+/*Define ancho maximo*/
     max-width: 700px;
+    /*Define margen izquierdo*/
     margin-left: auto;
+    /*Define margen derecho*/
     margin-right: auto;
+    /*Define color de fondo*/
     background-color: #fff;
+    /*Define sombra*/
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    /*Define margen encima*/
     margin-top: 30px;
+    /*Define altura*/
     height: calc(100% - 60px);
+    /*Define maxima altura*/
     max-height: 600px;
+    /*Define posicion con respecto a la original del contneido*/
     position: relative;
 }
 
+/* Selecciona la lista sin orden dentro del elemento con ID "chat-page". */
 #chat-page ul {
-    list-style-type: none;
-    background-color: #FFF;
-    margin: 0;
-    overflow: auto;
-    overflow-y: scroll;
-    padding: 0 20px 0px 20px;
-    height: calc(100% - 150px);
+  /* Elimina los puntos de viñeta predeterminados. */
+  list-style-type: none;
+
+  /* Establece un color de fondo blanco. */
+  background-color: #FFF;
+
+  /* Elimina los márgenes predeterminados. */
+  margin: 0;
+
+  /* Habilita el scroll si el contenido supera la altura. */
+  overflow: auto;
+
+  /* Permite solo scroll vertical. */
+  overflow-y: scroll;
+
+  /* Agrega relleno a la izquierda y derecha, sin relleno superior. */
+  padding: 0 20px 0px 20px;
+
+  /* Calcula la altura como el 100% menos 150px (para la sección de entrada y otros elementos). */
+  height: calc(100% - 150px);
 }
 
+
 #chat-page #messageForm {
+/*Define espacio dentro de a caja de 20px*/
     padding: 20px;
 }
 
+/* Selecciona los elementos de la lista (`<li>`) dentro
+   de la lista sin orden (`<ul>`) del elemento con ID "chat-page".
+   Estos elementos probablemente representan los mensajes individuales del chat. */
 #chat-page ul li {
-    line-height: 1.5rem;
-    padding: 10px 20px;
-    margin: 0;
-    border-bottom: 1px solid #f4f4f4;
+  /* Establece una altura de línea de 1.5rem para un mejor espaciado vertical del texto. */
+  line-height: 1.5rem;
+
+  /* Agrega un padding de 10px en la parte superior e inferior
+     y 20px a la izquierda y derecha para separar los mensajes. */
+  padding: 10px 20px;
+
+  /* Elimina los márgenes predeterminados. */
+  margin: 0;
+
+  /* Añade una línea divisoria inferior de 1px de grosor
+     en color #f4f4f4 para separar visualmente los mensajes. */
+  border-bottom: 1px solid #f4f4f4;
 }
 
+
 #chat-page ul li p {
+/*Margen nulo */
     margin: 0;
 }
 
 #chat-page .event-message {
+/*Define ancho */
     width: 100%;
+    /*Texto alienado en el centro*/
     text-align: center;
+    /*Limpieza para todo el contenido*/
     clear: both;
 }
 
 #chat-page .event-message p {
+/*Define color del texto*/
     color: #777;
+    /*Define tamaño del texto*/
     font-size: 14px;
     word-wrap: break-word;
 }
 
 #chat-page .chat-message {
+/*Espacio a la caja*/
     padding-left: 68px;
+    /*Posicion adapatable al contenido*/
     position: relative;
 }
 
+/*
+  Selecciona el elemento `<i>` (generalmente usado para iconos)
+  dentro de un elemento con la clase `.chat-message`
+  que a su vez está dentro del elemento con ID "chat-page".
+  Probablemente represente el avatar o inicial del usuario
+  del mensaje del chat.
+*/
 #chat-page .chat-message i {
-    position: absolute;
-    width: 42px;
-    height: 42px;
-    overflow: hidden;
-    left: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 18px;
-    line-height: 42px;
-    color: #fff;
-    text-align: center;
-    border-radius: 50%;
-    font-style: normal;
-    text-transform: uppercase;
+  /* Posicionamiento absoluto respecto a su contenedor `.chat-message`. */
+  position: absolute;
+
+  /* Establece el ancho del elemento a 42px. */
+  width: 42px;
+
+  /* Establece la altura del elemento a 42px. */
+  height: 42px;
+
+  /* Oculta cualquier contenido que sobrepase las dimensiones. */
+  overflow: hidden;
+
+  /* Posicionamiento a 10px de la izquierda de su contenedor. */
+  left: 10px;
+
+  /* Se muestra como un bloque en línea. */
+  display: inline-block;
+
+  /* Alinea el contenido verticalmente en el medio. */
+  vertical-align: middle;
+
+  /* Tamaño de fuente de 18px. */
+  font-size: 18px;
+
+  /* Altura de línea igual a la altura del elemento (42px) para un mejor espaciado vertical del texto. */
+  line-height: 42px;
+
+  /* Color de texto blanco. */
+  color: #fff;
+
+  /* Texto centrado horizontalmente. */
+  text-align: center;
+
+  /* Bordes redondeados con un radio de 50% para crear una forma circular. */
+  border-radius: 50%;
+
+  /* Estilo de fuente normal (sin cursiva o negrita). */
+  font-style: normal;
+
+  /* Texto convertido a mayúsculas. */
+  text-transform: uppercase;
 }
 
+
+/* Estilos para la página del chat */
+
+/* Contenedor de la lista de mensajes */
+#chat-page ul {
+  /* Elimina los puntos de viñeta */
+  list-style-type: none;
+
+  /* Color de fondo blanco */
+  background-color: #FFF;
+
+  /* Elimina los márgenes */
+  margin: 0;
+
+  /* Habilita el scroll si el contenido supera la altura */
+  overflow: auto;
+
+  /* Permite solo scroll vertical */
+  overflow-y: scroll;
+
+  /* Padding a la izquierda y derecha */
+  padding: 0 20px 0px 20px;
+
+  /* Calcula la altura como el 100% menos 150px (para la sección de entrada) */
+  height: calc(100% - 150px);
+}
+
+/* Elementos de la lista (mensajes individuales) */
+#chat-page ul li {
+  /* Altura de línea para mejor espaciado vertical */
+  line-height: 1.5rem;
+
+  /* Padding para separar los mensajes */
+  padding: 10px 20px;
+
+  /* Elimina los márgenes */
+  margin: 0;
+
+  /* Línea divisoria inferior */
+  border-bottom: 1px solid #f4f4f4;
+}
+
+/* Avatar o inicial del usuario */
+#chat-page .chat-message i {
+  /* Posicionamiento absoluto */
+  position: absolute;
+
+  /* Ancho y altura */
+  width: 42px;
+  height: 42px;
+
+  /* Oculta contenido que sobrepasa */
+  overflow: hidden;
+
+  /* Posicionamiento a la izquierda */
+  left: 10px;
+
+  /* Se muestra como un bloque en línea */
+  display: inline-block;
+
+  /* Alinea verticalmente en el medio */
+  vertical-align: middle;
+
+  /* Tamaño de fuente */
+  font-size: 18px;
+
+  /* Altura de línea igual a la altura del elemento */
+  line-height: 42px;
+
+  /* Color de texto blanco */
+  color: #fff;
+
+  /* Texto centrado */
+  text-align: center;
+
+  /* Bordes redondeados */
+  border-radius: 50%;
+
+  /* Estilo de fuente normal */
+  font-style: normal;
+
+  /* Texto en mayúsculas */
+  text-transform: uppercase;
+}
+
+/* Nombre del usuario u otra información */
 #chat-page .chat-message span {
-    color: #333;
-    font-weight: 600;
+  /* Color del texto */
+  color: #333;
+
+  /* Peso de fuente seminegrita */
+  font-weight: 600;
 }
 
+/* Contenido del mensaje */
 #chat-page .chat-message p {
-    color: #43464b;
+  /* Color del texto gris oscuro */
+  color: #43464b;
 }
 
+/* Campo de texto para escribir el mensaje */
 #messageForm .input-group input {
-    float: left;
-    width: calc(100% - 85px);
+  /* Flota a la izquierda */
+  float: left;
+
+  /* Ancho calculado */
+  width: calc(100% - 85px);
 }
 
+/* Botón de envío de mensaje */
 #messageForm .input-group button {
-    float: left;
-    width: 80px;
-    height: 38px;
-    margin-left: 5px;
-}
+  /* Flota a la izquierda */
+  float: left;
 
-.chat-header {
-    text-align: center;
-    padding: 15px;
-    border-bottom: 1px solid #ececec;
-}
+  /* Ancho y altura */
+  width: 80px;
+  height: 38px;
 
-.chat-header h2 {
-    margin: 0;
-    font-weight: 500;
-}
-
-.connecting {
-    padding-top: 5px;
-    text-align: center;
-    color: #777;
-    position: absolute;
-    top: 65px;
-    width: 100%;
+  /* Margen izquierdo */
+  margin-left: 5px;
 }
 
 
+
+
+/* Consulta de medios para pantallas con un ancho máximo de 730px */
 @media screen and (max-width: 730px) {
 
-    .chat-container {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 10px;
-    }
+  /* Los estilos que se aplican aquí solo son para pantallas con un ancho máximo de 730px */
+
+  .chat-container {
+    /* Añade márgenes al contenedor del chat en pantallas más pequeñas */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
 }
 
+
 @media screen and (max-width: 480px) {
-    .chat-container {
-        height: calc(100% - 30px);
-    }
 
-    .username-page-container {
-        width: auto;
-        margin-left: 15px;
-        margin-right: 15px;
-        padding: 25px;
-    }
+}
+/* Media query para pantallas con ancho máximo de 730px */
+@media screen and (max-width: 730px) {
+  /*
+   Los estilos que se aplican aquí solo son para pantallas con un ancho máximo de 730px.
+   Estos estilos ayudan a mejorar la visualización del chat en pantallas más pequeñas.
+  */
 
-    #chat-page ul {
-        height: calc(100% - 120px);
-    }
+  .chat-container {
+    /* Establece la altura del contenedor del chat */
+    height: calc(100% - 30px);
+  }
 
-    #messageForm .input-group button {
-        width: 65px;
-    }
+  .username-page-container {
+    /* Ajusta el ancho y los márgenes del contenedor del nombre de usuario */
+    width: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 25px;
+  }
 
-    #messageForm .input-group input {
-        width: calc(100% - 70px);
-    }
+  #chat-page ul {
+    /* Ajusta la altura de la lista de mensajes */
+    height: calc(100% - 120px);
+  }
 
-    .chat-header {
-        padding: 10px;
-    }
+  #messageForm .input-group button {
+    /* Ajusta el ancho del botón de envío de mensaje */
+    width: 65px;
+  }
 
-    .connecting {
-        top: 60px;
-    }
+  #messageForm .input-group input {
+    /* Ajusta el ancho del campo de texto para escribir mensajes */
+    width: calc(100% - 70px);
+  }
 
-    .chat-header h2 {
-        font-size: 1.1em;
-    }
+  .chat-header {
+    /* Reduce el padding del encabezado del chat */
+    padding: 10px;
+  }
+
+  .connecting {
+    /* Ajusta la posición superior del mensaje de conexión */
+    top: 60px;
+  }
+
+  .chat-header h2 {
+    /* Reduce el tamaño de la fuente del título del chat */
+    font-size: 1.1em;
+  }
 }

@@ -26,7 +26,7 @@ public class WebSocketEventListener {
         // SessionDisconnectEvent event ; Resgistra cuando una conexióndeun cliente WebSocket cierra
         // Extrae el nombre de usuario de los atributos de la sesión almacenados en los encabezados del mensaje.
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
-        String username = (String) headerAccessor.getSessionAttributes().get("username");
+            String username = (String) headerAccessor.getSessionAttributes().get("username");
         // Comprueba si se ha recuperado un nombre de usuario válido.
         if (username != null) {
             // Registra un mensaje informativo indicando que el usuario se ha desconectado.

@@ -24,13 +24,14 @@ public class WebSocketConfig  implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // Registra el punto final (endpoint) de los WebSockets
         registry.addEndpoint("/ws").withSockJS();
+        //ws especifica la conexión de tipo webSocket
         // El endpoint "/ws" estará disponible para los clientes que deseen conectarse a través de WebSocket,
         // y conSockJS() permite que los navegadores que no soportan nativamente WebSocket aún puedan comunicarse
         // a través de WebSockets mediante la capa de abstracción SockJS.
 
     }
 
-    @Override
+    @Override //sobreescritura de metodos
     public void configureMessageBroker(MessageBrokerRegistry registry) {
 
         // Configura el broker de mensajes
